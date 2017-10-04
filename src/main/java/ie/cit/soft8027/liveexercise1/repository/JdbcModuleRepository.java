@@ -33,9 +33,8 @@ public class JdbcModuleRepository {
 	 * @return	list of all module entity objects
 	 */
 	@Override
-	public List<Module> findAll() {
-		String sql = "SELECT * FROM modules WHERE id = ?";
-		return jdbcTemplate.queryForObject(sql, new Object[] {id}, new ModuleRowMapper());
+	public List<Module> findAll(int id) {
+		
 	}
 
 }

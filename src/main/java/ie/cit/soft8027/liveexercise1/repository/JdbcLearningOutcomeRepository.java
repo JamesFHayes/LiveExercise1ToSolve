@@ -10,7 +10,7 @@ import ie.cit.soft8027.liveexercise1.entity.LearningOutcome;
 import ie.cit.soft8027.liveexercise1.rowmapper.LearningOutcomeRowMapper;
 
 @Repository
-public class JdbcLearningOutcomeRepository // MISSING!
+public class JdbcLearningOutcomeRepository {
 
 	// MISSING!
 	private JdbcTemplate jdbcTemplate;
@@ -18,6 +18,14 @@ public class JdbcLearningOutcomeRepository // MISSING!
 	@Override
 	public List<LearningOutcome> getByModuleId(int id) {
 		// MISSING! How dow I return all learning outcomes for a given module id?
+	}
+
+	public JdbcTemplate getJdbcTemplate() {
+		return jdbcTemplate;
+	}
+
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
 	}
 	
 }
