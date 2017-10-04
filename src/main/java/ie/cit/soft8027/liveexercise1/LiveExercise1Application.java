@@ -13,7 +13,7 @@ import ie.cit.soft8027.liveexercise1.service.LearningService;
 @SpringBootApplication
 public class LiveExercise1Application implements CommandLineRunner {
 
-	// MISSING!
+	@Autowired
 	private LearningService learningService;
 	
 	public static void main(String[] args) {
@@ -26,8 +26,8 @@ public class LiveExercise1Application implements CommandLineRunner {
 		System.out.println("Live Exercise Output:\n");
 
 		// List all modules and their learning outcomes
-		for (Module m : learningService.// MISSING!
-			learningService.// MISSING!
+		for (Module m : learningService.getAllModules()) {
+			learningService.populateLearningOutcomes(m);
 			System.out.println(m.toString());
 		}
 		

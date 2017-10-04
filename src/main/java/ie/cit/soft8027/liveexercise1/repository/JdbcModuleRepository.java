@@ -10,7 +10,7 @@ import ie.cit.soft8027.liveexercise1.entity.Module;
 import ie.cit.soft8027.liveexercise1.rowmapper.ModuleRowMapper;
 
 // MISSING!
-public class JdbcModuleRepository // MISSING!
+public class JdbcModuleRepository {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -34,7 +34,8 @@ public class JdbcModuleRepository // MISSING!
 	 */
 	@Override
 	public List<Module> findAll() {
-		// MISSING! How do you retrieve all rows?
+		String sql = "SELECT * FROM modules WHERE id = ?";
+		return jdbcTemplate.queryForObject(sql, new Object[] {id}, new ModuleRowMapper());
 	}
 
 }
